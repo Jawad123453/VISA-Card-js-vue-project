@@ -1,0 +1,318 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  background-color: skyblue;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.mainbox{
+  margin: 200px 0 100px ;
+  width:600px;
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 0 30px 60px rgba(59, 59, 59, 0.4);
+  padding:20px;
+}
+.mainbox form{
+  margin-top: 150px;
+  padding:0 20px;
+}
+.mainbox form .block{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+.mainbox form .block label{
+  font-size: 14px;
+  color:rgb(66, 66, 66);
+}
+.mainbox form .block input{
+  padding:15px;
+  border-radius:5px ;
+  -webkit-border-radius:5px ;
+  -moz-border-radius:5px ;
+  -ms-border-radius:5px ;
+  -o-border-radius:5px ;
+  border: 1px solid #777;
+  transform: 5s;
+  -webkit-transform: 5s;
+  -moz-transform: 5s;
+  -ms-transform: 5s;
+  -o-transform: 5s;
+  outline: none;
+  font-size: 16px;
+}
+.mainbox form .block input:hover,
+.mainbox form .block input:focus{
+  border: 1px solid rgb(0, 183, 255);
+}
+.mainbox form .block input:focus{
+  box-shadow: 0px 5px 5px 0 rgb(216, 216, 216);
+}
+.mainbox form .lastblock{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:30px;
+}
+.mainbox form .lastblock .Expire{
+  flex:1;
+}
+.mainbox form .lastblock .Expire,
+.mainbox form .lastblock .CVV{
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+}
+.mainbox form .lastblock .Expire label,
+.mainbox form .lastblock .CVV label{
+  font-size: 14px;
+  color:rgb(66, 66, 66);
+}
+.mainbox form .lastblock .Expire .Expire-input{
+  display: flex;
+  width:100%;
+  align-items: center;
+  gap:10px;
+}
+.mainbox form .lastblock .Expire .Expire-input select,
+.mainbox form .lastblock .Expire .Expire-input option{
+  flex:1;
+  font-size: 20px;
+  font-weight: normal;
+  padding:10px;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  appearance: none;
+}
+.Expire-input select:hover,
+.Expire-input option:hover,
+.CVV input:hover,
+.Expire-input select:focus,
+.Expire .Expire-input option:focus,
+.CVV input:focus{
+  border: 1px solid rgb(0, 183, 255);
+}
+.mainbox form .lastblock .Expire .Expire-input select:focus,
+.mainbox form .lastblock .CVV input:focus{
+  box-shadow: 0px 5px 5px 0 rgb(216, 216, 216);
+}
+.mainbox form .lastblock .CVV input{
+  font-size: 20px;
+  font-weight: normal;
+  width: 130px;
+  border: 1px solid #777;
+  padding:10px;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.mainbox form button.btn-End{
+  width: 100%;
+  padding:15px 0;
+  background-color: rgb(0, 174, 255);
+  color:white;
+  font-size: 22px;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0 ;
+}
+/* card */
+.mainbox .card{
+  position: absolute;
+  top:0%;
+  left:50%;
+  width:70%;
+  height:250px;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+  /* background-image:linear-gradient(to bottom, rgba(0, 0, 0,0.5),rgba(0,0,0,0.5)),url("./imgs/p1.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all .5s ease;
+  transform-style: preserve-3d;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  -o-transition: all .5s ease;
+}
+.mainbox .card.isfliped{
+  transform: translate(-50%,-50%) rotateY(180deg);
+  -webkit-transform: translate(-50%,-50%) rotateY(180deg);
+  -moz-transform: translate(-50%,-50%) rotateY(180deg);
+  -ms-transform: translate(-50%,-50%) rotateY(180deg);
+  -o-transform: translate(-50%,-50%) rotateY(180deg);
+}
+.mainbox .card .back{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height:100%;
+  padding:20px;
+  gap:5px;
+  position: absolute;
+  top:0;
+  left:0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+}
+.mainbox .card .back label{
+  color:white;
+  text-align: end;
+}
+.mainbox .card .back input{
+  color:black;
+  padding:10px;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: white;
+  display: block;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  text-align: end;
+  cursor: none;
+  user-select: none;
+  pointer-events: none;
+}
+.mainbox .card .back img{
+  width: 75px;
+  margin-top: 30px;
+  opacity: 0.7;
+  align-self: end;
+}
+.mainbox .card .front{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  padding:20px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+}
+.mainbox .card .Vimgs{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainbox .card .Vimgs img:nth-child(1){
+  width:75px;
+}
+.mainbox .card .Vimgs img:nth-child(2){
+  width:100px;
+}
+.mainbox .card .CardNumber{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainbox .card .CardNumber span{
+  color:white;
+  margin-left: 5px;
+  font-size: 22px;
+}
+.mainbox .card .card-ending{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:10px;
+}
+.mainbox .card .card-ending .cardHolder:nth-child(1){
+  flex:1;
+}
+.mainbox .card .card-ending .cardHolder{
+  padding:10px;
+  overflow: hidden;
+}
+.mainbox .card .card-ending .cardHolder p{
+  font-size: 13px;
+  color:rgb(224, 224, 224);
+  margin-bottom: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.mainbox .card .card-ending .cardHolder h1,
+.mainbox .card .card-ending .cardHolder h1 span{
+  color:white;
+  font-weight: normal;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.mainbox .card .card-ending .cardHolder h1{
+  font-weight: bold;
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}

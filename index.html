@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="anythink.css">
+  <script src="https://unpkg.com/vue@3.0.2"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div class="mainbox">
+      <!-- data -->
+      <form @submit="lastreqest">
+        <div class="block">
+          <label>Card Number</label>
+          <input type="number" v-model="CardNumber" @input="maxLengthCheck2">
+        </div>
+        <div class="block">
+          <label for="">Card Holder</label>
+          <input type="text" v-model="CardHodervalue">
+        </div>
+        <div class="lastblock">
+          <div class="Expire">
+            <label for="">Expiration Date</label>
+            <div class="Expire-input">
+              <select v-model="Monthof">
+                <option selected disabled>Month</option>
+                <option>01</option>
+                <option>02</option>
+                <option>03</option>
+                <option>04</option>
+                <option>05</option>
+                <option>06</option>
+                <option>07</option>
+                <option>08</option>
+                <option>09</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <select v-model="Yearof">
+                <option value="" selected disabled>Year</option>
+                <option>2023</option>
+                <option>2024</option>
+                <option>2025</option>
+                <option>2026</option>
+                <option>2027</option>
+                <option>2028</option>
+                <option>2029</option>
+                <option>2030</option>
+                <option>2031</option>
+                <option>2032</option>
+                <option>2033</option>
+                <option>2034</option>
+              </select>
+            </div>
+          </div>
+          <div class="CVV">
+            <label for="">CVV</label>
+            <input type="number" v-model="CVVNUmber" @input="maxLengthCheck" @focus="fliput = true" @blur="fliput = false">
+          </div>
+        </div>
+        <button class="btn-End" type="submit">Submite</button>
+      </form>
+      <!-- card -->
+      <div class="card" v-if="selectedimg !=''" :class='[fliput == true ? "isfliped" : ""]' :imgchanger="imgchanger" :style="{backgroundImage:selectedimg}">
+        <div class="back">
+          <label>CVV</label>
+          <input type="password" v-model="CVVNUmber">
+          <img src="./imgs/visa.png">
+        </div>
+        <div class="front">
+          <div class="Vimgs">
+            <img src="./imgs/chip.png" alt="">
+            <img src="./imgs/visa.png" alt="">
+          </div>
+          <div class="CardNumber">
+            <span v-for="ones in fullthearray">{{ones}}</span>
+          </div>
+          <div class="card-ending">
+            <div class="cardHolder">
+              <p>Card Holder</p>
+              <h1 v-if="CardHodervalue==``">Full Name</h1>
+              <h1 v-if="CardHodervalue!=``">{{CardHodervaluechange}}</h1>
+            </div>
+            <div class="cardHolder">
+              <p>Expire</p>
+              <h1><span>{{ Monthof}}</span>/<span>{{changeYearof}}</span></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+  </div>
+  <script src="anythink.js"></script>
+</body>
+</html>
